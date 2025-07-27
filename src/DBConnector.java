@@ -3,11 +3,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnector {
-    private static final String url = "jdbc:mysql://localhost:3306/auction";
-    private static final String username = "root";
-    private static final String password = "1234S";
+    private String url;
+    private String username;
+    private String password;
 
-    public static Connection getConnection() throws SQLException {
+    public DBConnector(String url,String username,String password){
+        this.url = url;
+        this.username = username;
+        this.password = password;
+    }
+
+    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }
 }

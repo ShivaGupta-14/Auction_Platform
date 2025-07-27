@@ -58,11 +58,11 @@ This packages the compiled files into an executable JAR file with the main class
 java -jar MyAuctionApp.jar
 ```
 
-●A terminal-based menu will appear where you can:  
-●Register sellers and bidders  
-●Create auction items  
-●Place bids  
-●View auction results and reports
+● A terminal-based menu will appear where you can:  
+● Register sellers and bidders  
+● Create auction items  
+● Place bids  
+● View auction results and reports
 
 ---
 

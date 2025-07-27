@@ -1,4 +1,4 @@
-DROP DATABASE auction_platform;
+
 CREATE DATABASE auction_platform;
 use auction_platform;
 

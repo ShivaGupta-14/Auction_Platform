@@ -13,7 +13,7 @@ public class AuctionService {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT item_id, MAX(bid_amount) AS highest_bid FROM bids GROUP BY item_id");
             while (rs.next()) {
-                System.out.println("Item ID: " + rs.getInt("item_id") + " | Highest Bid: ₹" + rs.getDouble("highest_bid"));
+                System.out.println("Item ID: " + rs.getInt("item_id") + " | Highest Bid: " + rs.getDouble("highest_bid"));
             }
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
@@ -47,7 +47,7 @@ public class AuctionService {
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                System.out.println("Item ID: " + rs.getInt("item_id") + " | Winning User: " + rs.getInt("bidder_id") + " | Winning Bid: ₹" + rs.getDouble("bid_amount"));
+                System.out.println("Item ID: " + rs.getInt("item_id") + " | Winning User: " + rs.getInt("bidder_id") + " | Winning Bid: " + rs.getDouble("bid_amount"));
             }
         } catch (SQLException e) {
             System.out.println("Error fetching winning bidders: " + e.getMessage());
@@ -63,7 +63,7 @@ public class AuctionService {
             stmt.setInt(1, itemId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                System.out.println("User: " + rs.getInt("bidder_id") + " | Amount: ₹" + rs.getDouble("bid_amount") +" | Time: " + rs.getTimestamp("timestamp"));
+                System.out.println("User: " + rs.getInt("bidder_id") + " | Amount: " + rs.getDouble("bid_amount") +" | Time: " + rs.getTimestamp("timestamp"));
             }
         } catch (SQLException e) {
             System.out.println("Error fetching bidding history: " + e.getMessage());

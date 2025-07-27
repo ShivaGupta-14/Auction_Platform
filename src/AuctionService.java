@@ -40,9 +40,9 @@ public class AuctionService {
         try {
             String sql =
                 "SELECT wb.item_id, b.bidder_id, b.bid_amount" +
-                "FROM winning_bids wb" + 
-                "JOIN bids b ON wb.bid_id = b.bid_id" + 
-                "JOIN items i ON wb.item_id = i.item_id" + 
+                "FROM winning_bids wb " + 
+                "JOIN bids b ON wb.bid_id = b.bid_id " + 
+                "JOIN items i ON wb.item_id = i.item_id " + 
                 "WHERE i.status = 'EXPIRED'";
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();

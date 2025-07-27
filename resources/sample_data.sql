@@ -79,12 +79,12 @@ INSERT INTO bids (bid_id, item_id, bidder_id, bid_amount, timestamp) VALUES
 -- Winning Bids
 INSERT INTO winning_bids (win_id, item_id, bid_id, conversion_fee, transaction_fee, payment_status, created_at) VALUES
 (1, 1, 2, 500.00, 100.00, 'PENDING', NOW()),
-(2, 2, 4, 1000.00, 200.00, 'COMPLETED', NOW()),
+(2, 2, 4, 1000.00, 200.00, 'PAID', NOW()),
 (3, 3, 5, 100.00, 50.00, 'PENDING', NOW()),
 (4, 4, 6, 300.00, 75.00, 'PENDING', NOW()),
-(5, 5, 7, 800.00, 120.00, 'COMPLETED', NOW()),
+(5, 5, 7, 800.00, 120.00, 'PAID', NOW()),
 (6, 6, 8, 150.00, 40.00, 'PENDING', NOW()),
-(7, 7, 9, 600.00, 110.00, 'COMPLETED', NOW()),
+(7, 7, 9, 600.00, 110.00, 'PAID', NOW()),
 (8, 8, 10, 90.00, 25.00, 'PENDING', NOW()),
 (9, 9, 1, 100.00, 15.00, 'PENDING', NOW()),
 (10, 10, 3, 200.00, 50.00, 'PENDING', NOW());

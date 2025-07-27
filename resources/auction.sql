@@ -1,3 +1,4 @@
+DROP DATABASE auction_platform;
 CREATE DATABASE auction_platform;
 use auction_platform;
 
@@ -19,7 +20,7 @@ CREATE TABLE wallets (
     wallet_id INT PRIMARY KEY,
     user_id INT,
     balance DECIMAL(12,2),
-    status ENUM('ACTIVE', 'BLOCKED'),
+    status ENUM('ACTIVE', 'INACTIVE'),
     created_at DATETIME,
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

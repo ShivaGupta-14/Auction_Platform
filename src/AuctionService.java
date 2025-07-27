@@ -39,12 +39,11 @@ public class AuctionService {
     public void findWinningBidders() {
         try {
             String sql =
-                "SELECT b.item_id, b.bidder_id, b.bid_amount " +
-                "FROM bids b " +
-                "JOIN (SELECT item_id, MAX(bid_amount) AS max_amount FROM bids GROUP BY item_id) max_bids " +
-                "ON b.item_id = max_bids.item_id AND b.bid_amount = max_bids.max_amount " +
-                "JOIN items i ON b.item_id = i.item_id " +
-                "WHERE i.status = 'Expired'";
+                "SELECT wb.item_id, b.bidder_id, b.bid_amount" +
+                "FROM winning_bids wb" + 
+                "JOIN bids b ON wb.bid_id = b.bid_id" + 
+                "JOIN items i ON wb.item_id = i.item_id" + 
+                "WHERE i.status = 'EXPIRED'";
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {

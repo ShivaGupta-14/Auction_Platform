@@ -39,7 +39,7 @@ public class AuctionService {
     public void findWinningBidders() {
         try {
             String sql =
-                "SELECT wb.item_id, b.bidder_id, b.bid_amount" +
+                "SELECT wb.item_id, b.bidder_id, b.bid_amount " +
                 "FROM winning_bids wb " + 
                 "JOIN bids b ON wb.bid_id = b.bid_id " + 
                 "JOIN items i ON wb.item_id = i.item_id " + 
